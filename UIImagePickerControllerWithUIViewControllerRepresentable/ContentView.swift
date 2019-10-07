@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var isShowingImagePicker = false
+    
     var body: some View {
         VStack {
             
@@ -17,11 +20,14 @@ struct ContentView: View {
                 .border(Color.black, width: 1)
             
             Button(action: {
-                print("Show image picker")
+                self.isShowingImagePicker.toggle()
             }, label: {
                 Text("Select Image")
                     .font(.system(size: 32))
             })
+                .sheet(isPresented: $isShowingImagePicker) {
+                    Text("This is the image picker")
+            }
         }
     }
 }

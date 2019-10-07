@@ -27,9 +27,22 @@ struct ContentView: View {
             })
                 .sheet(isPresented: $isShowingImagePicker) {
                     //Text("This is the image picker")
-                    DummyView()
+                    //DummyView()
+                    ImagePickerView()
             }
         }
+    }
+}
+
+struct ImagePickerView: UIViewControllerRepresentable {
+    
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePickerView>) -> UIViewController {
+        let controller = UITableViewController()
+        return controller
+    }
+    
+    func updateUIViewController(_ uiViewController: ImagePickerView.UIViewControllerType, context: UIViewControllerRepresentableContext<ImagePickerView>) {
+        
     }
 }
 

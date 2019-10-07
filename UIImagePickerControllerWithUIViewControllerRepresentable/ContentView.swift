@@ -26,9 +26,24 @@ struct ContentView: View {
                     .font(.system(size: 32))
             })
                 .sheet(isPresented: $isShowingImagePicker) {
-                    Text("This is the image picker")
+                    //Text("This is the image picker")
+                    DummyView()
             }
         }
+    }
+}
+
+struct DummyView: UIViewRepresentable {
+    
+    func makeUIView(context: UIViewRepresentableContext<DummyView>) -> UIButton {
+        let button = UIButton()
+        button.setTitle("Dummy", for: .normal)
+        button.backgroundColor = .red
+        return button
+    }
+    
+    func updateUIView(_ uiView: UIButton, context: UIViewRepresentableContext<DummyView>) {
+        
     }
 }
 
